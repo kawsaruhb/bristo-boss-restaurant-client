@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useParams } from 'react-router-dom';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import orderImg from '../../../assets/shop/order.jpg';
@@ -8,8 +9,11 @@ import Cover from '../../Shared/Cover/Cover';
 import OrderTab from '../OrderTab/OrderTab';
 
 const Order = () => {
-  const [tabIndex, setTabIndex] = useState(0);
-
+  const categories = ['salad', 'pizza', 'soup', 'dessert', 'drinks'];
+  const { category } = useParams();
+  const initialIndex = categories.indexOf(category);
+  const [tabIndex, setTabIndex] = useState(initialIndex);
+ 
   const [menu] = useMenu();
   const salad = menu.filter((item) => item.category === 'salad');
   const dessert = menu.filter((item) => item.category === 'dessert');

@@ -13,7 +13,7 @@ const FoodCard = ({ item }) => {
         <h2 className='card-title flex justify-center font-bold'>{name}</h2>
         <p>{recipe}</p>
         <div className='card-actions justify-center'>
-        <button className="btn btn-outline border-0 border-b-4 mt-4 uppercase text-yellow-600">Add to cart</button>
+        <button className="btn btn-outline border-0 border-b-4 mt-4 uppercase bg-slate-200 text-yellow-600">Add to cart</button>
         </div>
       </div>
     </div>
